@@ -2,7 +2,7 @@
 the following package contains the URDF description of mobile robot created as Autonomus mobile robots course project.
 
 # RVIZ Screenshot
-![alt text](https://i.imgur.com/Hz50M0H.png)
+[![Watch Video](https://i.imgur.com/zctsYZF.png)](https://www.youtube.com/watch?v=ThAjbMSuvAo)
 
 # how to use 
 `cd catkin_ws/src/m2wr_description`
@@ -13,6 +13,10 @@ the following package contains the URDF description of mobile robot created as A
 
 `catkin_make`
 
-`roslaunch m2wr_description rviz.launch`
+`roslaunch m2wr_description spawn.launch`
+
+`rosrun gazebo_ros gazebo`
+
+`rosrun m2wr_description obstacle_avoidance.py`
 
 
