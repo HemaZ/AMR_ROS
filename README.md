@@ -1,7 +1,9 @@
 # AMR_ROS
 the following package contains the URDF description of mobile robot created as Autonomus mobile robots course project.
 
-# RVIZ Screenshot
+the Robot simulates obstacle avoidence Algorithm.
+
+# Demo Video
 [![Watch Video](https://i.imgur.com/zctsYZF.png)](https://www.youtube.com/watch?v=ThAjbMSuvAo)
 
 # how to use 
