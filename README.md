@@ -10,7 +10,7 @@ the Robot simulates some of the mobile robots algorithms like obstacle avoidence
 
 # how to use
 
-`cd catkin_ws/src/
+`cd catkin_ws/src/`
 
 `git pull https://github.com/HemaZ/AMR_ROS.git`
 
