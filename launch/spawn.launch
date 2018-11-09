@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
     <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find m2wr_description)/urdf/m2wr.xacro'" />
-    
+    <arg name="__name" default="gazebo"/>
     <arg name="x" default="3"/>
     <arg name="y" default="-12"/>
     <arg name="z" default="0.5"/>
+    <!-- <remap from="gazebo" to="hemagaz"/> -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="verbose" value="true"/>
     <arg name="world_name" value="$(find m2wr_description)/worlds/mcity.world"/>
     <arg name="gui" value="true"/>
+    <arg name="__name" value="$(arg __name)"/>
+    
     </include>
+    <!-- <remap from="gazebo" to="$(arg __name)"/> -->
     <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
-          args="-urdf -param robot_description -model m2wr -x $(arg x) -y $(arg y) -z $(arg z)" />
-     <node pkg="m2wr_description" type="obstacle_avoidance.py" name="obstacle_avoidance"> 
+          args="-urdf -param robot_description -gazebo_namespace /$(arg __name) -model m2wr -x $(arg x) -y $(arg y) -z $(arg z)" />
+     <node pkg="m2wr_description" type="follow_wall.py" name="follow_wall"> 
      </node>     
 </launch>
